@@ -1,0 +1,17 @@
+[project]
+name = "langchain"
+version = "0.1.0"
+description = "Excuse Generator"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "annotated-types>=0.7.0",
+    "dotenv>=0.9.9",
+    "fastapi>=0.115.12",
+    "langchain-core>=0.3.54",
+    "langchain-ollama>=0.3.2",
+    "langserve>=0.3.1",
+    "pyttsx3>=2.98",
+    "sse-starlette>=2.2.1",
+    "streamlit>=1.44.1",
+]
