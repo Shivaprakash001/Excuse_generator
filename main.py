@@ -89,9 +89,9 @@ def run_streamlit_client():
     print("🖥️ Starting Streamlit client...")
     subprocess.run([
         "streamlit", 
-        "run", 
+        "run",
         "client.py", 
-        "--server.address=0.0.0.0", 
+        "--server.address=localhost", 
         "--server.port=8501"
     ])
 
