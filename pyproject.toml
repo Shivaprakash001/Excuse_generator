@@ -14,4 +14,5 @@ dependencies = [
     "pyttsx3>=2.98",
     "sse-starlette>=2.2.1",
     "streamlit>=1.44.1",
+    "langchain_groq"
 ]
