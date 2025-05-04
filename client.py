@@ -139,7 +139,6 @@ if excuses:
             if st.button("🔊", key=f"read_{idx}"):
                 try:
                     speak(item['text'])
-                    st.success(f"Speaking: {item['text']}")
                 except Exception as e:
                     st.error(f"Error in text-to-speech: {str(e)}")
 else:
