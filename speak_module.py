@@ -1,17 +1,19 @@
-import platform
-import pyttsx3
-
-def get_engine():
-    system = platform.system()
-    if system == 'Windows':
-        return pyttsx3.init('sapi5')
-    elif system == 'Darwin':
-        return pyttsx3.init('nsss')  # macOS
-    else:
-        return pyttsx3.init('espeak')  # Linux
-
-engine = get_engine()
+# speak_module.py
+from gtts import gTTS
+import streamlit as st
+import os
+import uuid
 
 def speak(text):
-    engine.say(text)
-    engine.runAndWait()
+    tts = gTTS(text=text, lang='en')
+    filename = f"temp_{uuid.uuid4().hex}.mp3"
+    tts.save(filename)
+    
+    # Streamlit audio player
+    audio_file = open(filename, 'rb')
+    audio_bytes = audio_file.read()
+    st.audio(audio_bytes, format='audio/mp3')
+
+    # Cleanup the file after use
+    audio_file.close()
+    os.remove(filename)
